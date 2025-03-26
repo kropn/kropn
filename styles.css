@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    color: green;
+    color: orange;
     font-family: 'Courier New', monospace;
     text-align: center;
 }
@@ -11,7 +11,7 @@ body {
 
 .ascii-art {
     font-size: 14px;
-    color: limegreen;
+    color: orange;
 }
 
 .glitch-text {

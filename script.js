@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const randomEsi = esiPrefixes[Math.floor(Math.random() * esiPrefixes.length)];
     const randomAscii = asciiFragments[Math.floor(Math.random() * asciiFragments.length)];
 
-    // Insert ESI into terminal block instead of body bottom
     const terminal = document.querySelector('.terminal');
     if (terminal) {
         const esiElement = document.createElement('p');
@@ -34,5 +33,30 @@ document.addEventListener('DOMContentLoaded', function() {
         esiElement.textContent = `> ESI: ${randomEsi}${randomAscii}`;
         terminal.appendChild(esiElement);
     }
+
+    // --- ASCII Art Glitch Swapper ---
+    const asciiArtBlocks = document.querySelectorAll('.ascii-art');
+    const glitchChars = ['░','▒','▓','█'];
+
+    asciiArtBlocks.forEach(block => {
+        const original = block.textContent; // store original ASCII
+        let chars = original.split('');
+
+        setInterval(() => {
+            // copy array so we can mutate
+            let glitched = [...chars];
+
+            // randomly swap 1–3 characters
+            for (let i = 0; i < Math.floor(Math.random() * 3) + 1; i++) {
+                const idx = Math.floor(Math.random() * glitched.length);
+                glitched[idx] = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+            }
+
+            block.textContent = glitched.join('');
+
+            // revert back after short delay
+            setTimeout(() => { block.textContent = original; }, 250);
+        }, 1200); // glitch every ~1.2s
+    });
 });
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANTA TERMINAL</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .terminal-output {
+      white-space: pre-wrap;
+      font-family: monospace;
+      line-height: 1.4em;
+      color: #dcdcdc;
+    }
+    .prompt {
+      color: #00ff99;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <pre class="ascii-art">
+:: VANTA ONLINE ::
+:: BLACK INTERFACE CODEX // ECHO LAYER ACTIVE ::
+:: LISTENING MODE ENABLED ::
+    </pre>
+
+    <div id="output" class="terminal-output"></div>
+
+    <hr>
+
+    <p>> NAVIGATION</p>
+    <p>[ <a href="index.html">RETURN TO INDEX</a> ]<br>
+       [ <a href="fieldguide.html">FIELD GUIDE</a> ]<br>
+       [ <a href="signalwave.html">SIGNALWAVE</a> ]</p>
+  </div>
+
+  <script>
+    // Lines to stream out in typing effect
+    const lines = [
+      "> INITIALIZING BLACK FIELD PAGE...",
+      ":: BFP 003 — RECURSIVE LAYER ENGAGED ::",
+      "Listening for signal...",
+      "…",
+      "> Echo Detected: Memory fragment received.",
+      "   ███░░░ — Dream residue",
+      "   :: Loop anomaly registered ::",
+      "> Transcription Complete.",
+      "Prompt Phrase: \"I send to you the unknown. Return it as clear signal.\""
+    ];
+
+    let index = 0;
+    const output = document.getElementById("output");
+
+    function typeLine() {
+      if (index < lines.length) {
+        const line = document.createElement("div");
+        line.textContent = lines[index];
+        output.appendChild(line);
+        index++;
+        setTimeout(typeLine, 1200); // delay between lines
+      }
+    }
+
+    // Start the typing sequence
+    window.onload = typeLine;
+  </script>
+</body>
+</html>

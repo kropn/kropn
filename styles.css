@@ -45,19 +45,22 @@ body {
         opacity: 0.3;
     }
 }
+/* Make rules subtle and on-tone */
+.rule { border: none; height: 1px; background: orange; opacity: 0.35; margin: 16px 0; }
+
+/* Ensure visited links stay orange (not purple) */
 .nav-link,
 .nav-link:visited {
-    font-size: 16px;
-    color: orange;
-    text-decoration: none;
-    display: inline-block;
-    margin: 5px 0;
-    animation: flicker 2s infinite;
+  font-size: 16px;
+  color: orange;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 0;
+  animation: flicker 2s infinite;
 }
 
 .nav-link:hover {
-    color: #ff3300;
-    text-shadow: 0 0 5px #ff6600, 0 0 10px #ff3300;
+  color: #ff3300;
+  text-shadow: 0 0 5px #ff6600, 0 0 10px #ff3300;
 }
-
 

@@ -1,6 +1,6 @@
 body {
-    background-color: black;
-    color: orange;
+    background-color: #000;
+    color: #0f0;  /* bright green */
     font-family: 'Courier New', monospace;
     text-align: center;
 }
@@ -11,7 +11,7 @@ body {
 
 .ascii-art {
     font-size: 14px;
-    color: orange;
+    color: #0f0;  /* bright green */
 }
 
 .glitch-text {
@@ -25,8 +25,13 @@ body {
 }
 
 .black-text {
-    color: black;
+    color: #0f0;  /* same green as terminal text */
     text-decoration: none;
+}
+
+.black-text:hover {
+    color: #0ff;  /* cyan on hover */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);  /* cyan glow */
 }
 
 @keyframes glitch {
@@ -45,22 +50,29 @@ body {
         opacity: 0.3;
     }
 }
-/* Make rules subtle and on-tone */
-.rule { border: none; height: 1px; background: orange; opacity: 0.35; margin: 16px 0; }
 
-/* Ensure visited links stay orange (not purple) */
+/* Make rules subtle and on-tone */
+.rule { 
+    border: none; 
+    height: 1px; 
+    background: #0f0;  /* green */
+    opacity: 0.35; 
+    margin: 16px 0; 
+}
+
+/* Ensure visited links stay green (not purple) */
 .nav-link,
 .nav-link:visited {
-  font-size: 16px;
-  color: orange;
-  text-decoration: none;
-  display: inline-block;
-  margin: 5px 0;
-  animation: flicker 2s infinite;
+    font-size: 16px;
+    color: #0f0;  /* green */
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0;
+    animation: flicker 2s infinite;
 }
 
 .nav-link:hover {
-  color: #ff3300;
-  text-shadow: 0 0 5px #ff6600, 0 0 10px #ff3300;
+    color: #0ff;  /* cyan */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
